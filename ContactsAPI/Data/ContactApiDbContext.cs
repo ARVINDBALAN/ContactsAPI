@@ -9,5 +9,6 @@ namespace ContactsAPI.Data
         {
         }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Users> User { get; set; }
     }
 }
