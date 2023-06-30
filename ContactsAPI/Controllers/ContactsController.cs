@@ -21,14 +21,14 @@ namespace ContactsAPI.Controllers
             this._dbcontext = dbContext;
         }
 
-        [Authorize]
+
         [HttpGet]
         public async Task<IActionResult> GetContacts()
         {
             return Ok(await _dbcontext.Contacts.ToListAsync());
         }
 
-
+        [Authorize]
         [HttpGet]
         [Route("{id:guid}")]
         public async Task<IActionResult> GetContacts([FromRoute] Guid id)
